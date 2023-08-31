@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+* {
+	box-sizing: border-box;
+}
+
+.main {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 20px;
+	background-color: #f7f7f7;
+	max-width: 600px;
+	margin: 0 auto;
+	margin-top:10px;
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+}
+
+
+        #logo {
+            display: inline-block;
+            font-size: 4em;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        #logo .eli {
+            color: #ffffff;
+        }
+
+        #logo .gpt {
+            color: #61dafb;
+            font-weight: 700;
+        }
+/* more styles as in the original code ... */
