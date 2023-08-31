@@ -1,0 +1,119 @@
+/* Container for the entire chat application */
+.chat-container {
+  width: 70%;
+  margin: auto;
+  border: 1px solid #ccc;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/* Title of the chat application */
+.app-title {
+  font-size: 24px;
+  margin: 15px;
+  text-align: center;
+  color: #333;
+}
+
+/* Container for chat history messages */
+.chat-history {
+  flex: 1;
+  overflow-y: scroll;
+  padding: 15px;
+}
+
+/* Styling for individual chat messages */
+.message {
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for user's messages */
+.you {
+  background-color: #e0f7fa;
+  align-self: flex-end;
+}
+
+/* Styling for ChatGPT's messages */
+.chatgpt {
+  background-color: #c8e6c9;
+}
+
+/* Bold sender name */
+.sender {
+  font-weight: bold;
+}
+
+/* Container for user input */
+.user-input {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: #ffffff;
+}
+
+/* Input field for typing messages */
+input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+}
+
+/* Send button */
+button {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 15px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Loading indicator style */
+.user-input button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.7;
+  position: relative;
+}
+
+.user-input button[disabled]::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid transparent;
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  animation: spin 1s linear infinite;
+}
+
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+
+/* Apply the font to the Markdown text */
+.markdown-content {
+  font-family: 'Helvetica', sans-serif; /* Use the chosen font */
+}
+
