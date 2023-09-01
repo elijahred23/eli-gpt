@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
+import jsPDF from 'jspdf';
+
 import './ChatApp.css';
+
 
 const ChatApp = () => {
 	const [chatHistory, setChatHistory] = useState([]);
@@ -50,6 +53,16 @@ const ChatApp = () => {
 			handleUserInput();
 		}
 	};
+	const handleDownloadPDF = () => {
+		const doc = new jsPDF();
+		const chatText = chatHistory
+			.map((message) => `${message.sender}: ${message.message}`)
+			.join('\n');
+
+		doc.text(chatText, 10, 10);
+		doc.save('chat_history.pdf');
+	};
+
 
 	return (
 		<div className="chat-container">
@@ -74,6 +87,7 @@ const ChatApp = () => {
 				<button onClick={handleUserInput} disabled={isLoading}>
 					{isLoading ? 'Loading...' : 'Send'}
 				</button>
+				<button onClick={handleDownloadPDF}>Download Chat as PDF</button>
 			</div>
 		</div>
 	);
